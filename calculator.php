@@ -8,6 +8,7 @@
  * @license  http://www.php.net/license/3_01.txt  PHP License 3.01
  * @link     http://localhost/training/php%20task%202/html/products.php
  */
+global $result;
 $num = $_REQUEST['number'];
 $opt = $_REQUEST['opt'];
 $result = $_REQUEST['result'];
@@ -22,16 +23,19 @@ echo $result;
 function cal(int $a, $b, int $c) 
 {
     if ($b =="+") { 
-        $result=$a+$c;
+        $result=$c+$a;
         return $result;
     } elseif ($b =="-") { 
-        $result=$a-$c;
+        $result=$c-$a;
         return $result;
     } elseif ($b =="*") { 
-        $result=$a*$c;
+        $result=$c*$a;
         return $result;
     } elseif ($b =="/") { 
-        $result=$a/$c;
+        $result=$c/$a;
+        return $result;
+    } elseif ($b=="=") {
+        $result=$c;
         return $result;
     }
     
